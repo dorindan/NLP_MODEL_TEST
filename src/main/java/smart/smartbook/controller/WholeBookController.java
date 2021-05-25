@@ -23,9 +23,9 @@ public class WholeBookController {
         return wholeBookService.getBookById(id).get();
     }
 
-    @RequestMapping(value = "/{author}/{bookname}/{bookpath}", method= RequestMethod.POST)
-    public WholeBook getEventUsers(@PathVariable String author, @PathVariable String bookname, @PathVariable String bookpath){
-        return wholeBookService.saveWholeBook(author, bookname, bookpath);
+    @RequestMapping(value = "/save/{author}/{bookname}/{bookpathName}", method= RequestMethod.POST)
+    public WholeBook getEventUsers(@PathVariable String author, @PathVariable String bookname, @PathVariable String bookpathName){
+        return wholeBookService.saveWholeBook(author, bookname, bookpathName);
     }
 
     @RequestMapping(value = "/bookname/{bookname}", method= RequestMethod.GET)
@@ -37,4 +37,33 @@ public class WholeBookController {
     public ExecutionStatus getPeopleNER(@PathVariable String bookname) throws IOException {
         return wholeBookService.getPeopleNER(bookname);
     }
+
+    @RequestMapping(value = "/NER/date/{bookname}", method= RequestMethod.GET)
+    public ExecutionStatus getDateNER(@PathVariable String bookname) throws IOException {
+        return wholeBookService.getDateNER(bookname);
+    }
+
+    @RequestMapping(value = "/NER/location/{bookname}", method= RequestMethod.GET)
+    public ExecutionStatus getLocationNER(@PathVariable String bookname) throws IOException {
+        return wholeBookService.getLocationNER(bookname);
+    }
+//
+//    @RequestMapping(value = "/NER/money/{bookname}", method= RequestMethod.GET)
+//    public ExecutionStatus getMoneyNER(@PathVariable String bookname) throws IOException {
+//        return wholeBookService.getMoneyNER(bookname);
+//    }
+//
+//    @RequestMapping(value = "/NER/organization/{bookname}", method= RequestMethod.GET)
+//    public ExecutionStatus getOrganizationNER(@PathVariable String bookname) throws IOException {
+//        return wholeBookService.getOrganizationNER(bookname);
+//    }
+//    @RequestMapping(value = "/NER/percentage/{bookname}", method= RequestMethod.GET)
+//    public ExecutionStatus getPercentageNER(@PathVariable String bookname) throws IOException {
+//        return wholeBookService.getPercentageNER(bookname);
+//    }
+//    @RequestMapping(value = "/NER/time/{bookname}", method= RequestMethod.GET)
+//    public ExecutionStatus getTimeNER(@PathVariable String bookname) throws IOException {
+//        return wholeBookService.getTimeNER(bookname);
+//    }
+
 }
