@@ -47,23 +47,23 @@ public class WholeBookController {
     public ExecutionStatus getLocationNER(@PathVariable String bookname) throws IOException {
         return wholeBookService.getLocationNER(bookname);
     }
-//
-//    @RequestMapping(value = "/NER/money/{bookname}", method= RequestMethod.GET)
-//    public ExecutionStatus getMoneyNER(@PathVariable String bookname) throws IOException {
-//        return wholeBookService.getMoneyNER(bookname);
-//    }
-//
-//    @RequestMapping(value = "/NER/organization/{bookname}", method= RequestMethod.GET)
-//    public ExecutionStatus getOrganizationNER(@PathVariable String bookname) throws IOException {
-//        return wholeBookService.getOrganizationNER(bookname);
-//    }
-//    @RequestMapping(value = "/NER/percentage/{bookname}", method= RequestMethod.GET)
-//    public ExecutionStatus getPercentageNER(@PathVariable String bookname) throws IOException {
-//        return wholeBookService.getPercentageNER(bookname);
-//    }
-//    @RequestMapping(value = "/NER/time/{bookname}", method= RequestMethod.GET)
-//    public ExecutionStatus getTimeNER(@PathVariable String bookname) throws IOException {
-//        return wholeBookService.getTimeNER(bookname);
-//    }
+
+    @RequestMapping(value = "/NER/money/{bookname}", method= RequestMethod.GET)
+    public ExecutionStatus getMoneyNER(@PathVariable String bookname) throws IOException {
+        return wholeBookService.getMoneyNER(bookname);
+    }
+
+    @RequestMapping(value = "/NER/organization/{bookname}", method= RequestMethod.GET)
+    public ExecutionStatus getOrganizationNER(@PathVariable String bookname) throws IOException {
+        return wholeBookService.getOrganizationNER(bookname);
+    }
+    @RequestMapping(value = "/NER/percentage/{bookname}", method= RequestMethod.GET)
+    public ExecutionStatus getPercentageNER(@PathVariable String bookname) throws IOException {
+        return wholeBookService.getPercentageNER(bookname);
+    }
+    @RequestMapping(value = "/NER/time/{bookname}", method= RequestMethod.GET)
+    public ExecutionStatus getTimeNER(@PathVariable String bookname) throws IOException {
+        return wholeBookService.getTimeNER(bookname);
+    }
 
 }
